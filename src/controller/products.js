@@ -1,6 +1,5 @@
 const { v4: uuidv4 } = require('uuid')
 const createError = require('http-errors')
-const { type } = require('os')
 
 
 
@@ -52,8 +51,6 @@ class ProductsAPI{
         const exist = this.exists(id)
 
         if(!exist) throw createError(404, 'The product does not exist')
-
-        this.validateBody(newData)
 
         const index = this.products.findIndex(product => product.id == id)
 
