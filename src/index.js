@@ -1,7 +1,6 @@
 const server = require('./services/server');
+const PORT = 8080;
 
-const puerto = 8080;
-
-server.listen(puerto, () => {
-    console.log(`servidor escuchando en el puerto ${puerto}`)
+server.listen(PORT, () => {
+    console.log('Escuchando servidor en puerto: ', PORT)
 })
