@@ -1,0 +1,1 @@
+La razón por la cual elegí Pug es porque tiene una sintaxis que me resulta mas familiar que hbs y ejs. Se me hace mas sencillo escribir y leerlo.
