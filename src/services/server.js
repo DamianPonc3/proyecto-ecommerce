@@ -1,9 +1,11 @@
 const express = require('express');
+const http = require('http');
 const path = require('path');
 const router = require('../routes/productos');
 
 /** INICIALIZACION API con EXPRESS */
 const app = express();
+const server = http.Server(app)
 
 /* permite leer lo que hay en el body segun el formato*/
 app.use(express.json());
@@ -31,4 +33,4 @@ app.use((err, req, res, next) => {
     })
 });
 
-module.exports = app;
+module.exports = server;

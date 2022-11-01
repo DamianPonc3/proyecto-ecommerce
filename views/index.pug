@@ -9,24 +9,53 @@ html(lang="en")
         title='PUG'
 
     body
-        div(class="container mx-auto container-form")
-            h1 Enter product
+    h2(class="tituloCentrado separacion") Ingrese Producto
+    div(class="container-fluid Centrado")
+        div(class="row")
+            div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12")
+                form(action="" method="post" class="" id="productForm")
+                    div(class="form-floating mb-3")
+                        input(type="text" class="form-control" id="title" placeholder="Nombre" name="title" required)
+                        label(for="title") Nombre
+                    div(class="form-floating mb-3")
+                        input(type="number" class="form-control" id="price" placeholder="Precio" name="price" required)
+                        label(for="precio") Precio
+                    div(class="form-floating mb-3")
+                        input(class="btn btn-success" type="submit" value="Enviar")
+    h2(class="tituloCentrado separacion") Vista de productos
+    div(class="container-fluid Centrado")
+        div(class="row")
+            div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12")
+                    table
+                        thead
+                            tr
+                                th(scope="col") ID
+                                th(scope='col') Name
+                                th(scope='col') Price
+                        tbody(id="tableContent")
+                            each product in products
+                                tr  
+                                    td= product.id
+                                    td= product.title
+                                    td= product.price
 
-            form(class="bg-light p-3 mb-3 form" style="width: 600px;" action="/productos" method="POST")
-                div(class="form-group row ")
-                    label(for="title" class="col-md-4 col-form-label") Product:
-                    div(class="col-md-8 p-1 ")
-                        input(type="text" id="title" name="title")
+    h2(class="tituloCentrado separacion") Centro de Mensajes
+    div(class="container-fluid Centrado")
+        div(class="row")
+            div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12")
+                form(action="" method="" class="" id="chatForm")
+                    div(class="form-floating mb-3")  
+                        input(type="email" class="form-control" id="email" placeholder="Email" name="email" required)
+                        label(for="foto") Email
+                    div(class="form-floating mb-3" id="chat")
+                    div(class="row")
+                        div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6")
+                            div(class="form-floating mb-3")  
+                                input(type="text" class="form-control" id="message" placeholder="Mensaje" name="menssage" required)
+                                label(for="mesage" id="message") Mensaje
+                        div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6")
+                            div(class="form-floating mb-3")
+                                input(class="btn btn-info" type="submit" value="Enviar")
 
-                div(class="form-group row")
-                    label(for="price" class="col-md-4 col-form-label") Price:
-                    div(class="col-md-8 p-1")
-                        input(type="number" id="price" name="price")
-
-                div(class="form-group row mt-2 ")
-                    div(class="col-md-10 ")
-                        input(value="Load Product" class="btn btn-primary" type="submit")
-
-
-            form(class="p-3" action="/productos" method="get")
-                button(class="btn btn-dark") See Products
+        script(src="/socket.io/socket.io.js")
+        script(src="/js/main.js")
