@@ -1,19 +1,12 @@
 const socketIo = require("socket.io");
 const path = require("path");
 const { formatMessages } = require("../utils/messages");
-const products = require('../products.json')
+const { ProductsController } = require('../controllers/contenedor')
 const messageObj = require("../controllers/message");
 
 const MessagesFileFolderPath = path.resolve(__dirname, "../../messages.json");
 
 messageObj.fileName = MessagesFileFolderPath;
-
-
-const productData = {
-    title: undefined,
-    price: undefined,
-};
-
 
 let io;
 
@@ -28,11 +21,14 @@ const initWsServer = (server) => {
     });
 
     //Listen for new product
-    socket.on("addProduct", (newProduct) => {
-        productData.title = newProduct.title;
-        productData.price = newProduct.price;
-        products.save(productData, products);
-        io.emit("lastProduct", products[products.length - 1]);
+    socket.on("addProduct", async (element) => {
+        const newProduct = {
+            title: element.title,
+            price: element.price,
+            id: id
+        }
+        ProductsController.save(newProduct);
+        io.emit('addProduct', ProductsController)
     });
 
     //Listen for chat messages
