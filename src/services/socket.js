@@ -1,13 +1,13 @@
 const socketIo = require("socket.io");
 const path = require("path");
 const { formatMessages } = require("../utils/messages");
-const { ProductsController } = require('../controllers/contenedor')
 const products = require('../products.json')
 const messageObj = require("../controllers/message");
 
 const MessagesFileFolderPath = path.resolve(__dirname, "../../messages.json");
 
 messageObj.fileName = MessagesFileFolderPath;
+
 
 const productData = {
     title: undefined,

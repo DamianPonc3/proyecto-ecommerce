@@ -16,18 +16,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// router.get('/productos', async (req, res, next) => {
-//     try {
-//         const obj = await ProductsController.getAll()
-//         res.render('productos', {
-//             products: obj,
-//             message: 'Loaded products'
-//         })
-//     } catch (err) {
-//         next(err);
-//     }
-// })
-
 router.post('/', async (req, res,) => {
     const { title, price} = req.body;
     if (title && price) {

@@ -16,67 +16,37 @@
     },
     {
         "title": "hamburguesa",
-        "price": 1500,
+        "price": 2500,
         "id": 7
     },
     {
-        "title": "da",
-        "price": 23,
+        "title": "hamburguesa",
+        "price": 2500,
         "id": 8
     },
     {
-        "title": "da",
-        "price": 3444,
+        "title": "hamburguesa",
+        "price": 2500,
         "id": 9
     },
     {
-        "title": "da",
-        "price": 3444,
+        "title": "hamburguesa",
+        "price": 3000,
         "id": 10
     },
     {
-        "title": "da",
-        "price": 3444,
+        "title": "hamburguesa",
+        "price": 3000,
         "id": 11
     },
     {
-        "title": "da",
-        "price": 3444,
+        "title": "hamburguesa",
+        "price": 3000,
         "id": 12
     },
     {
-        "title": "da",
-        "price": 3444,
+        "title": "hamburguesa",
+        "price": 2800,
         "id": 13
-    },
-    {
-        "title": "da",
-        "price": 23231,
-        "id": 14
-    },
-    {
-        "title": "da",
-        "price": 23231,
-        "id": 15
-    },
-    {
-        "title": "gfffas",
-        "price": 3113124,
-        "id": 16
-    },
-    {
-        "title": "wqeeqw",
-        "price": 123232112313,
-        "id": 17
-    },
-    {
-        "title": "wqeeqw",
-        "price": 123232112313,
-        "id": 18
-    },
-    {
-        "title": "Pizza Al Molde",
-        "price": 213244,
-        "id": 19
     }
 ]
