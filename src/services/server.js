@@ -40,6 +40,7 @@ myWebSocketServer.on('connection', (socket) => {
             title: data.title,
             price: data.price,
             id: uuidv4(),
+            url: data.url
         }
         ProductosController.save(nuevoProducto);
 

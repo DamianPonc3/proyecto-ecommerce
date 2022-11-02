@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 class ProductosApi {
     constructor() {
         this.productos = [
-            { title: 'Pizza', price: 1500, id: uuidv4()}
+            { title: 'Pizza', price: 1500, id: uuidv4(), url: 'https://cdn2.iconfinder.com/data/icons/food-1136/512/pizza-food-cheese-recipe-homemade-512.png' }
         ]
     }
 
@@ -21,12 +21,13 @@ class ProductosApi {
 
     save(data) {
 
-        if (!data.title || !data.price) throw createError(400, 'Datos invalidos');
+        if (!data.title || !data.price || !data.url) throw createError(400, 'Datos invalidos');
 
         const nuevoProducto = {
             title: data.title,
             price: data.price,
             id: uuidv4(),
+            url: data.url
         }
 
         this.productos.push(nuevoProducto);
