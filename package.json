@@ -2,6 +2,7 @@
   "name": "ecommerce-backend",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,8 +15,11 @@
   "dependencies": {
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
+    "express-validator": "^6.14.2",
     "http-errors": "^2.0.0",
+    "knex": "^2.3.0",
     "moment": "^2.29.4",
+    "mysql": "^2.18.1",
     "pug": "^3.0.2",
     "socket.io": "^4.5.3",
     "uuid": "^9.0.0"

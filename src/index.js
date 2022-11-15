@@ -1,7 +1,16 @@
-const Server = require('./services/server');
+import server from "./services/server.js";
+import { initWsServer } from "./services/socket.js";
+import { DBService } from "./class/db.js";
 
-const PORT = 8080;
+const port = 8080;
 
-Server.listen(PORT, () => {
-    console.log('Server escuchando en el puerto', PORT);
-});
+const init = async () => {
+  await DBService.init();
+  initWsServer(server);
+  server.listen(port, () => console.log(`Server up port ${port}`));
+  server.on("error", (error) => {
+    console.log("Server catch!", error);
+  });
+};
+
+init();
